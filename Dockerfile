@@ -30,5 +30,7 @@ RUN \
 
 ADD http-api.tar.gz /opt/reddit-depression/http-api/
 
+EXPOSE 8080
+
 WORKDIR /opt/reddit-depression/http-api
 ENTRYPOINT ["python", "api.py"]
