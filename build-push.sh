@@ -10,3 +10,4 @@ tar --dereference -c -f http-api.tar.gz \
 
 docker build -t catenae/erdd-api .
 rm -f http-api.tar.gz
+docker push catenae/erdd-api
