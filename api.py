@@ -8,11 +8,10 @@ from flask_cors import CORS
 from services import alerts, users, documents, meta, stats
 from conf import conf_loader as conf
 
+
 app = Flask(__name__)
 CORS(app)
-
 api = Api(app)
-
 kwargs = {}
 
 # Alerts

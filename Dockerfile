@@ -26,6 +26,7 @@ RUN \
         flask \
         flask-restful \
         flask_cors \
+        gunicorn \
         pymongo
 
 ADD http-api.tar.gz /opt/reddit-depression/http-api/
@@ -33,4 +34,4 @@ ADD http-api.tar.gz /opt/reddit-depression/http-api/
 EXPOSE 8080
 
 WORKDIR /opt/reddit-depression/http-api
-ENTRYPOINT ["python", "api.py"]
+ENTRYPOINT ["gunicorn", "-w", "4", "--bind", "0.0.0.0:8080", "api:app"]
